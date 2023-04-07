@@ -4,6 +4,7 @@
     <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <EnableNETAnalyzers>True</EnableNETAnalyzers>
   </PropertyGroup>
 
   <ItemGroup>
@@ -19,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CoinBot.Database\CoinBot.Database.csproj" />
+    <ProjectReference Include="..\CoinBot.Settings\CoinBot.Settings.csproj" />
   </ItemGroup>
 
 </Project>

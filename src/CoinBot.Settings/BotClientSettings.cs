@@ -1,6 +1,6 @@
 ﻿namespace CoinBot.Settings;
 
-public class BotClient
+public class BotClientSettings
 {
     public string Token { get; set; } = null!;
 }

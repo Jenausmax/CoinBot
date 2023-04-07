@@ -1,4 +1,5 @@
 ﻿using CoinBot.Database.Extensions;
+using CoinBot.Settings;
 using Serilog;
 
 namespace CoinBot.Api.Extensions;
@@ -15,6 +16,7 @@ public static class ExtensionsDependentServices
     /// <returns></returns>
     public static WebApplicationBuilder RegisterServices(this WebApplicationBuilder builder)
     {
+        builder.Services.Configure<BotClientSettings>(builder.Configuration.GetSection(nameof(BotClientSettings)));
         builder.Services.AddControllers();
         builder.Services.RegisterDataLayer(builder.Configuration);
 

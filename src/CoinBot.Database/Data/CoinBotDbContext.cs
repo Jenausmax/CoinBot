@@ -1,12 +1,24 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using CoinBot.Database.Data.Configurations;
+using CoinBot.Database.Data.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace CoinBot.Database.Data;
 
-internal class CoinBotDbContext : DbContext
+public class CoinBotDbContext : DbContext
 {
+    public DbSet<User> Users { get; set; }
+
     public CoinBotDbContext(DbContextOptions options) : base(options)
     {
-        
+        Database.EnsureDeleted();
+        Database.EnsureCreated();
+    }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.ApplyConfiguration(new UserConfiguration());
+
+        base.OnModelCreating(modelBuilder);
     }
 
     //// метод нужен для работы с интерфейсом IUpdatableEntity...для проставления даты изменения
