@@ -1,4 +1,4 @@
-﻿namespace CoinBot.Database.Data.Models.Interfaces;
+﻿namespace CoinBot.Domain.Models.Interfaces;
 
 public interface IDeletable
 {

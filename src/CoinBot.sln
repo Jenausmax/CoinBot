@@ -17,6 +17,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoinBot.Core", "CoinBot.Cor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoinBot.Domain", "CoinBot.Domain\CoinBot.Domain.csproj", "{0C94083A-7BBD-4097-8CDF-0D3448D87E7A}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoinBot.DTO", "CoinBot.DTO\CoinBot.DTO.csproj", "{8B66A167-7DF8-4CF8-9CF3-6F73AC1DB348}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoinBot.Migration", "CoinBot.Migration\CoinBot.Migration.csproj", "{7706DE55-D4F0-47A2-A180-D69BE80D710C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +47,14 @@ Global
 		{0C94083A-7BBD-4097-8CDF-0D3448D87E7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0C94083A-7BBD-4097-8CDF-0D3448D87E7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0C94083A-7BBD-4097-8CDF-0D3448D87E7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B66A167-7DF8-4CF8-9CF3-6F73AC1DB348}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B66A167-7DF8-4CF8-9CF3-6F73AC1DB348}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B66A167-7DF8-4CF8-9CF3-6F73AC1DB348}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B66A167-7DF8-4CF8-9CF3-6F73AC1DB348}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7706DE55-D4F0-47A2-A180-D69BE80D710C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7706DE55-D4F0-47A2-A180-D69BE80D710C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7706DE55-D4F0-47A2-A180-D69BE80D710C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7706DE55-D4F0-47A2-A180-D69BE80D710C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -51,6 +63,7 @@ Global
 		{B668048C-3ACA-4C2B-9108-5B30507B1761} = {8C61AE3C-4A0D-40CA-9D5A-31A10D70265F}
 		{B65DD393-8B44-41FF-AE7B-6B76A7F470DD} = {2DC86A50-D932-450A-B70C-C9DAA287C5EA}
 		{0C94083A-7BBD-4097-8CDF-0D3448D87E7A} = {2DC86A50-D932-450A-B70C-C9DAA287C5EA}
+		{8B66A167-7DF8-4CF8-9CF3-6F73AC1DB348} = {2DC86A50-D932-450A-B70C-C9DAA287C5EA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FE53E9C6-819B-4F86-8105-E444C1AD34E5}

@@ -1,4 +1,4 @@
-﻿using CoinBot.Database.Data.Models;
+﻿using CoinBot.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

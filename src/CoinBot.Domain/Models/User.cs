@@ -1,6 +1,6 @@
-﻿using CoinBot.Database.Data.Models.Interfaces;
+﻿using CoinBot.Domain.Models.Interfaces;
 
-namespace CoinBot.Database.Data.Models;
+namespace CoinBot.Domain.Models;
 
 /// <summary>
 /// Пользователь.

@@ -1,4 +1,5 @@
 ﻿using CoinBot.Database.Data;
+using CoinBot.Database.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -15,6 +16,8 @@ public static class DatabaseRegistrationExtensions
             builder.UseSnakeCaseNamingConvention();
             configureAction?.Invoke(builder);
         });
+
+        services.AddSingleton<IMigrator, Migrator>();
 
         return services;
     }

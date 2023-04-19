@@ -1,5 +1,5 @@
 ﻿using CoinBot.Database.Data.Configurations;
-using CoinBot.Database.Data.Models;
+using CoinBot.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace CoinBot.Database.Data;
@@ -10,8 +10,6 @@ public class CoinBotDbContext : DbContext
 
     public CoinBotDbContext(DbContextOptions options) : base(options)
     {
-        Database.EnsureDeleted();
-        Database.EnsureCreated();
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

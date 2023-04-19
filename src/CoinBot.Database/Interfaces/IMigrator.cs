@@ -5,5 +5,5 @@
 /// </summary>
 public interface IMigrator
 {
-    Task MigrateAsync();
+    Task MigrateAsync(CancellationToken cancellationToken);
 }
