@@ -1,4 +1,4 @@
-﻿using CoinBot.Domain.Models.Interfaces;
+﻿using CoinBot.Domain.Interfaces;
 
 namespace CoinBot.Domain.Models;
 

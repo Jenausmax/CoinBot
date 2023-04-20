@@ -1,4 +1,4 @@
-﻿namespace CoinBot.Domain.Models.Interfaces;
+﻿namespace CoinBot.Domain.Interfaces;
 
 /// <summary>
 /// Интерфейс представляет сущность.
