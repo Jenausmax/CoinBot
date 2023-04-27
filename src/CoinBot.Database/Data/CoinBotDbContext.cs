@@ -8,6 +8,8 @@ public class CoinBotDbContext : DbContext
 {
     public DbSet<User> Users { get; set; }
 
+    public DbSet<Message> Messages { get; set; }
+
     public CoinBotDbContext(DbContextOptions options) : base(options)
     {
     }
@@ -15,6 +17,7 @@ public class CoinBotDbContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.ApplyConfiguration(new UserConfiguration());
+        modelBuilder.ApplyConfiguration(new MessageConfiguration());
 
         base.OnModelCreating(modelBuilder);
     }

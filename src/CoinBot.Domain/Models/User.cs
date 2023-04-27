@@ -14,4 +14,6 @@ public class User : IEntity<long>, IDeletable
     public long ChatId { get; set; }
 
     public bool IsDeleted { get; set; }
+
+    public ICollection<Message>? Messages { get; set; }
 }

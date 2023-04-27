@@ -2,12 +2,12 @@
 
 public record UserDto
 {
-    public long Id { get; set; }
+    public long Id { get; init; }
 
-    public string Name { get; set; } = string.Empty;
+    public string Name { get; init; } = string.Empty;
 
-    public long ChatId { get; set; }
+    public long ChatId { get; init; }
 
-    public bool IsDeleted { get; set; }
+    public bool IsDeleted { get; init; }
 }
 

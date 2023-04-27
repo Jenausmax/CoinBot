@@ -21,6 +21,37 @@ namespace CoinBot.Database.Data.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
+            modelBuilder.Entity("CoinBot.Domain.Models.Message", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasColumnName("id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("boolean")
+                        .HasColumnName("is_deleted");
+
+                    b.Property<string>("Text")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("text");
+
+                    b.Property<long>("UserId")
+                        .HasColumnType("bigint")
+                        .HasColumnName("user_id");
+
+                    b.HasKey("Id")
+                        .HasName("pk_messages");
+
+                    b.HasIndex("UserId")
+                        .HasDatabaseName("ix_messages_user_id");
+
+                    b.ToTable("messages", (string)null);
+                });
+
             modelBuilder.Entity("CoinBot.Domain.Models.User", b =>
                 {
                     b.Property<long>("Id")
@@ -47,6 +78,23 @@ namespace CoinBot.Database.Data.Migrations
                         .HasName("pk_users");
 
                     b.ToTable("users", (string)null);
+                });
+
+            modelBuilder.Entity("CoinBot.Domain.Models.Message", b =>
+                {
+                    b.HasOne("CoinBot.Domain.Models.User", "User")
+                        .WithMany("Messages")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired()
+                        .HasConstraintName("fk_messages_users_user_id");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("CoinBot.Domain.Models.User", b =>
+                {
+                    b.Navigation("Messages");
                 });
 #pragma warning restore 612, 618
         }

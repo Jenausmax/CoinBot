@@ -8,6 +8,7 @@ public static class ConfigureDto
     public static void AddMappingProfiles(this IMapperConfigurationExpression configuration)
     {
         configuration.AddProfile<UserProfile>();
+        configuration.AddProfile<MessageProfile>();
     }
 }
 

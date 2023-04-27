@@ -20,4 +20,8 @@
     <ProjectReference Include="..\CoinBot.Domain\CoinBot.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Data\Migrations\" />
+  </ItemGroup>
+
 </Project>
