@@ -8,7 +8,7 @@ public class UserProfile : Profile
 {
     public UserProfile()
     {
-        CreateMap<UserDto, User>();
+        CreateMap<UserDto, User>().ReverseMap();
 
         CreateMap<Message, UserDto>()
             .ForMember(dst => dst.ChatId, cfg => cfg.MapFrom(src => src.Chat.Id))
