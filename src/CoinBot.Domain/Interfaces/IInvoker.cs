@@ -8,5 +8,5 @@ public interface IInvoker
     void SetCommand<T>(string? textCommand)
         where T : CommandAttribute;
 
-    Task<string> ExecuteCommand(User userViewModels, CancellationToken cancellationToken);
+    Task<string> ExecuteCommand(User userViewModels, Message message, CancellationToken cancellationToken);
 }

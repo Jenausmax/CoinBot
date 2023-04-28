@@ -9,7 +9,7 @@ public interface IExecuteCommand<TBotFacade, TClient>
     where TBotFacade : IBotFacade<TClient>
 {
     Task ProcessingUpdate(
-        string? testCommand,
+        Message? testCommand,
         User user,
         CancellationToken cancellationToken);
 }

@@ -9,6 +9,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.5">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -21,7 +23,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CoinBot.Core\CoinBot.Core.csproj" />
     <ProjectReference Include="..\CoinBot.Database\CoinBot.Database.csproj" />
+    <ProjectReference Include="..\CoinBot.DTO\CoinBot.DTO.csproj" />
     <ProjectReference Include="..\CoinBot.Settings\CoinBot.Settings.csproj" />
   </ItemGroup>
 

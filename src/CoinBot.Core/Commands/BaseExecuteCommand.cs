@@ -28,16 +28,18 @@ public abstract class BaseExecuteCommand<TBotFacade, TClient> : IExecuteCommand<
         _logger = logger;
     }
 
-    public async Task ProcessingUpdate(string? testCommand, User user, CancellationToken cancellationToken)
+    public async Task ProcessingUpdate(Message? testCommand, User user, CancellationToken cancellationToken)
     {
         await _bot.SendChatActionAsync(user.ChatId, BotAction.Typing, cancellationToken);
 
         string? msg;
         try
         {
-            _invoker.SetCommand<CommandAttribute>(testCommand);
+            _invoker.SetCommand<CommandAttribute>(testCommand?.Text);
 
-            msg = await _invoker.ExecuteCommand(user, cancellationToken);
+            if(testCommand == null) { return; }
+
+            msg = await _invoker.ExecuteCommand(user, testCommand, cancellationToken);
         }
         catch (CommandNotFoundException ex)
         {

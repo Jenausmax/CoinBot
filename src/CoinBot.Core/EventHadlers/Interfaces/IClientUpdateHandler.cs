@@ -2,7 +2,7 @@
 
 namespace CoinBot.Core.EventHadlers.Interfaces;
 
-internal interface IClientUpdateHandler : IUpdateHandler
+public interface IClientUpdateHandler : IUpdateHandler
 {
-    event UpdateEventHandlerAsync? UpdateReceivedEvent;
+    public event UpdateEventHandlerAsync? UpdateReceivedEvent;
 }

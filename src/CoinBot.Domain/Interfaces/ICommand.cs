@@ -2,5 +2,5 @@
 
 public interface ICommand
 {
-    Task<string> ExecuteAsync(long chatId, int userId, int messageId, string? commandText);
+    Task<string> ExecuteAsync(long chatId, long userId, string? commandText, CancellationToken cancellationToken);
 }

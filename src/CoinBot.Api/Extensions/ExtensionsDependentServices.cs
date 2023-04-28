@@ -1,4 +1,6 @@
-﻿using CoinBot.Database.Extensions;
+﻿using CoinBot.Core;
+using CoinBot.Database.Extensions;
+using CoinBot.DTO.Extensions;
 using CoinBot.Settings;
 using Serilog;
 
@@ -19,6 +21,13 @@ public static class ExtensionsDependentServices
         builder.Services.Configure<BotClientSettings>(builder.Configuration.GetSection(nameof(BotClientSettings)));
         builder.Services.AddControllers();
         builder.Services.RegisterDataLayer(builder.Configuration);
+
+        builder.Services.ConfigureTelegramBotClient(builder.Configuration);
+
+        builder.Services.AddAutoMapper(cfg =>
+        {
+            cfg.AddMappingProfiles();
+        });
 
         return builder;
     }

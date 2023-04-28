@@ -6,7 +6,7 @@ public class Message : IEntity<long>, IDeletable
 {
     public long Id { get; set; }
 
-    public string Text { get; set; } = string.Empty;
+    public string? Text { get; set; } = string.Empty;
 
     public long UserId { get; set; }
 
