@@ -14,6 +14,11 @@ public class UserProfile : Profile
             .ForMember(dst => dst.ChatId, cfg => cfg.MapFrom(src => src.Chat.Id))
             .ForMember(dst => dst.Name, cfg => cfg.MapFrom(src => src.Chat.FirstName + src.Chat.LastName))
             .ForMember(dst => dst.IsDeleted, cfg => cfg.Ignore());
+
+        CreateMap<Message, User>()
+            .ForMember(dst => dst.ChatId, cfg => cfg.MapFrom(src => src.Chat.Id))
+            .ForMember(dst => dst.Name, cfg => cfg.MapFrom(src => src.Chat.FirstName + src.Chat.LastName))
+            .ForMember(dst => dst.IsDeleted, cfg => cfg.Ignore());
     }
 }
 
