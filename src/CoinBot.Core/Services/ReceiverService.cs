@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using CoinBot.Core.Constants;
 using CoinBot.Core.EventHadlers.Interfaces;
 using CoinBot.Domain.Interfaces.Commands;
 using CoinBot.Domain.Interfaces.Services;
@@ -35,23 +34,26 @@ public class ReceiverService : IReceiverService
     {
         var options = new ReceiverOptions()
         {
-            AllowedUpdates = new[] { UpdateType.Message }
+            AllowedUpdates = new[] { UpdateType.Message, UpdateType.CallbackQuery }
         };
 
         var stoppingReceiveSource = new CancellationTokenSource();
 
-        _clientUpdateHandler.UpdateReceivedEvent += async (sender, update) =>
+        _clientUpdateHandler.UpdateEventCallbackEvent += async (update) =>
+        {
+            if (update.CallbackQuery != null)
+            {
+                var user = _mapper.Map<User>(update.CallbackQuery);
+
+                await _executeCommand.ProcessingUpdate(new Message(){ Text = update.CallbackQuery.Data, UserId = user.Id}, user, stoppingToken);
+            }
+        };
+
+        _clientUpdateHandler.UpdateReceivedEvent += async (e, update) =>
         {
             if (update.Message != null)
             {
-                if (update.Message.Contact?.UserId == update.Message.Chat.Id)
-                {
-                    update.Message.Text = CommandKeys.Registration;
-                }
-
-                var user = _mapper.Map<User>(update.Message);
-
-                await _executeCommand.ProcessingUpdate(new Message(){ Text = update.Message.Text, UserId = user.Id}, user, stoppingToken);
+                _logger.LogError("Sassssaassasasas");
             }
         };
 

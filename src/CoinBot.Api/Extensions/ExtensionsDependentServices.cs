@@ -29,6 +29,8 @@ public static class ExtensionsDependentServices
             cfg.AddMappingProfiles();
         });
 
+        builder.Services.AddMemoryCache();
+
         return builder;
     }
 

@@ -47,6 +47,6 @@ public abstract class BaseExecuteCommand<TBotFacade, TClient> : IExecuteCommand<
             _logger.LogError(ex.Message);
         }
 
-        await _bot.SendTextMessageAsync(user.ChatId, msg, cancellationToken);
+        await _bot.SendTextInlineKeyboardMessageAsync(user.ChatId, msg, cancellationToken);
     }
 }

@@ -1,4 +1,5 @@
 ﻿using CoinBot.Core.Commands;
+using CoinBot.Core.Commands.Telegram;
 using CoinBot.Core.EventHadlers;
 using CoinBot.Core.EventHadlers.Interfaces;
 using CoinBot.Core.HostedServices;
@@ -73,6 +74,7 @@ public static class BuilderExtensions
     private static void AddCommands(this IServiceCollection serviceCollection)
     {
         serviceCollection.AddScoped<IInvoker, Invoker>();
+        serviceCollection.AddScoped<IIncomeCommand, IncomeCommand>();
     }
 }
 

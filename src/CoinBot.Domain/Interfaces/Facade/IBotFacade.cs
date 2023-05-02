@@ -10,7 +10,7 @@ public interface IBotFacade<T> where T: IClient
         BotAction chatAction,
         CancellationToken cancellationToken);
 
-    Task SendTextMessageAsync(
+    Task SendTextInlineKeyboardMessageAsync(
         long chatId,
         string text,
         CancellationToken cancellationToken);
