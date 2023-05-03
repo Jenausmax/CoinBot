@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using CoinBot.Domain.Dto;
 using Telegram.Bot.Types;
 using User = CoinBot.Domain.Models.User;
 

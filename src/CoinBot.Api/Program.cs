@@ -1,6 +1,7 @@
 using CoinBot.Api.Extensions;
 using Serilog;
 using Serilog.Events;
+using Serilog.Sinks.Redis;
 
 namespace CoinBot.Api;
 
@@ -12,6 +13,7 @@ public class Program
             .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
             .Enrich.FromLogContext()
             .WriteTo.Console()
+            .WriteTo.Redis(new RedisConfiguration() { Host = "localhost:6379", Key = "CoinBot" })
             .WriteTo.SQLite(@"log.db")
             .CreateBootstrapLogger();
 
@@ -28,6 +30,7 @@ public class Program
                 .ReadFrom.Services(services)
                 .Enrich.FromLogContext()
                 .WriteTo.Console()
+                .WriteTo.Redis(new RedisConfiguration() { Host = "localhost:6379", Key = "CoinBot" })
                 .WriteTo.SQLite(@"log.db"));
 
             #endregion

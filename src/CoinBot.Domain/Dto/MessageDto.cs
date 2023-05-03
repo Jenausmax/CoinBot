@@ -1,4 +1,4 @@
-﻿namespace CoinBot.DTO;
+﻿namespace CoinBot.Domain.Dto;
 
 public record MessageDto
 {

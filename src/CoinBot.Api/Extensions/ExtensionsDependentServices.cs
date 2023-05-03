@@ -30,6 +30,10 @@ public static class ExtensionsDependentServices
         });
 
         builder.Services.AddMemoryCache();
+        builder.Services.AddStackExchangeRedisCache(op =>
+        {
+            op.Configuration = builder.Configuration["RedisCacheUrl"];
+        });
 
         return builder;
     }

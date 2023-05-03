@@ -45,7 +45,7 @@ public class ReceiverService : IReceiverService
             {
                 var user = _mapper.Map<User>(update.CallbackQuery);
 
-                await _executeCommand.ProcessingUpdate(new Message(){ Text = update.CallbackQuery.Data, UserId = user.Id}, user, stoppingToken);
+                await _executeCommand.ProcessingUpdate(new Message(){ Text = update.CallbackQuery.Data, UserId = user.Id }, user, stoppingToken);
             }
         };
 
@@ -69,7 +69,5 @@ public class ReceiverService : IReceiverService
         {
             stoppingReceiveSource.Cancel();
         }
-
-
     }
 }

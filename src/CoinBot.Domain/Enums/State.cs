@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace CoinBot.DTO.Enums;
+namespace CoinBot.Domain.Enums;
 
 public enum State
 {

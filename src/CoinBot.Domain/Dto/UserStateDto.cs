@@ -1,6 +1,6 @@
-﻿using CoinBot.DTO.Enums;
+﻿using CoinBot.Domain.Enums;
 
-namespace CoinBot.DTO;
+namespace CoinBot.Domain.Dto;
 
 public record UserStateDto
 {
