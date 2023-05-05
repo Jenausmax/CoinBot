@@ -1,5 +1,5 @@
 ﻿using CoinBot.Database.Data;
-using CoinBot.Database.Interfaces;
+using CoinBot.Domain.Interfaces.Migration;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 

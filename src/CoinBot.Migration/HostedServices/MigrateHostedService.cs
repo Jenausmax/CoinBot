@@ -1,4 +1,4 @@
-﻿using CoinBot.Database.Interfaces;
+﻿using CoinBot.Domain.Interfaces.Migration;
 
 namespace CoinBot.Migration.HostedServices;
 

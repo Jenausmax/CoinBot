@@ -1,4 +1,5 @@
 ﻿using CoinBot.Core.EventHadlers.Interfaces;
+using CoinBot.Core.EventHandlers;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
 using Polly.Timeout;

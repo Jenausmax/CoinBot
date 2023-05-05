@@ -1,4 +1,4 @@
-﻿namespace CoinBot.Database.Interfaces;
+﻿namespace CoinBot.Domain.Interfaces.Migration;
 
 /// <summary>
 /// Контракт миграции базы.

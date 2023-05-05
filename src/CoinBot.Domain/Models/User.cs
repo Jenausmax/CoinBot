@@ -9,7 +9,7 @@ public class User : IEntity<long>, IDeletable
 {
     public long Id { get; set; }
 
-    public long TelegramId { get; set; }
+    public long? TelegramId { get; set; }
 
     public string FirstName { get; set; } = string.Empty;
 
