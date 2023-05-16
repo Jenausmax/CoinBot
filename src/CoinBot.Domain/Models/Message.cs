@@ -2,6 +2,9 @@
 
 namespace CoinBot.Domain.Models;
 
+/// <summary>
+/// Сообщение.
+/// </summary>
 public class Message : IEntity<long>, IDeletable
 {
     public long Id { get; set; }

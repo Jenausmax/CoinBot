@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoinBot.Api", "CoinBot.Api\CoinBot.Api.csproj", "{C3476A2C-3113-4027-9739-DE2BF75595C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoinBot.Server", "CoinBot.Api\CoinBot.Server.csproj", "{C3476A2C-3113-4027-9739-DE2BF75595C9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoinBot.Settings", "CoinBot.Settings\CoinBot.Settings.csproj", "{EA96DB78-E04B-42C7-9120-72E78FE01004}"
 EndProject
@@ -19,7 +19,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoinBot.Domain", "CoinBot.D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoinBot.DTO", "CoinBot.DTO\CoinBot.DTO.csproj", "{8B66A167-7DF8-4CF8-9CF3-6F73AC1DB348}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoinBot.Migration", "CoinBot.Migration\CoinBot.Migration.csproj", "{7706DE55-D4F0-47A2-A180-D69BE80D710C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoinBot.Migration", "CoinBot.Migration\CoinBot.Migration.csproj", "{7706DE55-D4F0-47A2-A180-D69BE80D710C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

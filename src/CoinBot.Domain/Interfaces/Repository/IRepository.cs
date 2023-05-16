@@ -1,18 +1,57 @@
 ﻿namespace CoinBot.Domain.Interfaces.Repository;
 
+/// <summary>
+/// Контракт репозитория.
+/// </summary>
+/// <typeparam name="TId">Тип Id</typeparam>
+/// <typeparam name="TEntity">Сущность.</typeparam>
 public interface IRepository<TId, TEntity> 
-    where TEntity : IEntity<TId> 
+    where TEntity : class, IEntity<TId> 
     where TId : struct
 {
-    IQueryable<TEntity> Query();
+    /// <summary>
+    /// Метод получения коллекции нужной сущности.
+    /// </summary>
+    /// <returns>Коллекция <see cref="ICollection{T}"/>.</returns>
+    ICollection<TEntity> GetAllAsync();
 
-    Task<ICollection<TEntity>> GetAllAsync();
+    /// <summary>
+    /// Метод поиска сущности по Id.
+    /// </summary>
+    /// <param name="id">Id.</param>
+    /// <param name="cancellationToken">Токен отмены.</param>
+    /// <returns>Сущность <see cref="TEntity"/> nullable.</returns>
+    Task<TEntity?> FindByIdAsync(TId id, CancellationToken cancellationToken);
 
-    Task<TEntity> FindByIdAsync(TId id);
+    /// <summary>
+    /// Метод проверки существования сущности в коллекции.
+    /// </summary>
+    /// <param name="entity">Сущность.</param>
+    /// <param name="cancellationToken">Токен отмены.</param>
+    /// <returns>Логическое true/false. true - сущность имеется в коллекциии false - сущности нет в коллекциии.</returns>
+    Task<bool> ExistsAsync(TEntity entity, CancellationToken cancellationToken);
 
-    Task<TId> AddAsync(TEntity entity);
+    /// <summary>
+    /// Добавление сущности.
+    /// </summary>
+    /// <param name="entity">Сущность.</param>
+    /// <param name="cancellationToken">Токен отмены.</param>
+    /// <returns>Id.</returns>
+    Task<TId> AddAsync(TEntity entity, CancellationToken cancellationToken);
 
-    Task<TEntity> UpdateAsync(TEntity entity);
+    /// <summary>
+    /// Обновление сущности.
+    /// </summary>
+    /// <param name="entity">Сущность.</param>
+    /// <param name="cancellationToken">Токен отмены.</param>
+    /// <returns>Сущность <see cref="TEntity"/>.</returns>
+    Task<TEntity> UpdateAsync(TEntity entity, CancellationToken cancellationToken);
 
-    Task DeleteAsync(TId id);
+    /// <summary>
+    /// Удаление сущности.
+    /// </summary>
+    /// <param name="id">Id.</param>
+    /// <param name="cancellationToken">Токен отмены.</param>
+    /// <returns></returns>
+    Task DeleteAsync(TId id, CancellationToken cancellationToken);
 }

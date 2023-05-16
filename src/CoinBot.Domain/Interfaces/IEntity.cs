@@ -6,6 +6,9 @@
 /// <typeparam name="TId">Тип Id.</typeparam>
 public interface IEntity<TId> where TId : struct
 {
+    /// <summary>
+    /// Id.
+    /// </summary>
     TId Id { get; set; }
 }
 

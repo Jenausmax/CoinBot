@@ -3,6 +3,10 @@ using CoinBot.Domain.Interfaces.Client;
 
 namespace CoinBot.Domain.Interfaces.Facade;
 
+/// <summary>
+/// Контракт "фасада" библиотеки <see cref="ITelegramBotClient"/>
+/// </summary>
+/// <typeparam name="T"></typeparam>
 public interface IBotFacade<T> where T: IClient
 {
     Task SendChatActionAsync(

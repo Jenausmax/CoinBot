@@ -2,6 +2,9 @@
 
 namespace CoinBot.Migration.HostedServices;
 
+/// <summary>
+/// Класс фоновой задачи по инициализации миграции.
+/// </summary>
 internal class MigrateHostedService : IHostedService
 {
     private readonly IMigrator _migrator;

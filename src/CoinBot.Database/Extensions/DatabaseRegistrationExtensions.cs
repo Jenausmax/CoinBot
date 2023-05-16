@@ -1,5 +1,7 @@
 ﻿using CoinBot.Database.Data;
-using CoinBot.Database.Interfaces;
+using CoinBot.Database.Repository;
+using CoinBot.Domain.Interfaces.Migration;
+using CoinBot.Domain.Interfaces.Repository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -18,6 +20,8 @@ public static class DatabaseRegistrationExtensions
         });
 
         services.AddSingleton<IMigrator, Migrator>();
+
+        services.AddScoped(typeof(IRepository<,>), (typeof(BaseRepository<,>)));
 
         return services;
     }
