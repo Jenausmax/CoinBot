@@ -1,7 +1,6 @@
-﻿using CoinBot.Core.EventHandlers;
-using Telegram.Bot.Polling;
+﻿using Telegram.Bot.Polling;
 
-namespace CoinBot.Core.EventHadlers.Interfaces;
+namespace CoinBot.Core.EventHandlers.Interfaces;
 
 public interface IClientUpdateHandler : IUpdateHandler
 {

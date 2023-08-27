@@ -1,7 +1,7 @@
 ﻿using CoinBot.Core.Commands;
 using CoinBot.Core.Commands.Telegram;
-using CoinBot.Core.EventHadlers;
-using CoinBot.Core.EventHadlers.Interfaces;
+using CoinBot.Core.EventHandlers;
+using CoinBot.Core.EventHandlers.Interfaces;
 using CoinBot.Core.HostedServices;
 using CoinBot.Core.Services;
 using CoinBot.Core.Services.Facade;

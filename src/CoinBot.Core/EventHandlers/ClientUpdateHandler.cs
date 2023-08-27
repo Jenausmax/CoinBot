@@ -1,5 +1,4 @@
-﻿using CoinBot.Core.EventHadlers.Interfaces;
-using CoinBot.Core.EventHandlers;
+﻿using CoinBot.Core.EventHandlers.Interfaces;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
 using Polly.Timeout;
@@ -7,7 +6,7 @@ using Telegram.Bot;
 using Telegram.Bot.Exceptions;
 using Telegram.Bot.Types;
 
-namespace CoinBot.Core.EventHadlers;
+namespace CoinBot.Core.EventHandlers;
 
 public class ClientUpdateHandler : IClientUpdateHandler
 {
